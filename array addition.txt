@@ -1,0 +1,15 @@
+#include<PIC18F4550.h>
+#include<stdio.h>
+#include<stdlib.h>
+
+
+void main(void) {
+    int Arr[5] = {1,2,3,4,5};
+    int sum = 0;
+    TRISB = 0;
+    for(int i=0;i<5;i++){
+        sum += Arr[i];
+    }
+    PORTB = sum;
+    return;
+}

@@ -1,0 +1,54 @@
+#include <pic18f4550.h>
+#define PD0 PORTDbits.RD0
+#define PD1 PORTDbits.RD1
+#define PD2 PORTDbits.RD2
+#define PD3 PORTDbits.RD3
+#define PD4 PORTDbits.RD4
+#define PD5 PORTDbits.RD5
+#define PD6 PORTDbits.RD6
+#define PD7 PORTDbits.RD7
+
+void delay( int time)
+{
+ int i,j;
+ for(i=0;i<time;i++)
+ for(j=0;j<5000;j++);
+}
+/*
+ 
+void main(void)
+{
+ TRISB = 0x00;
+ while(){
+ PD0=1;
+ delay(200);
+ PD1=0;
+  delay(200);
+ PD2=1;
+  delay(200);
+ PD3=0;
+  delay(200);
+ PD4=1;
+  delay(200);
+ PD5=0;
+  delay(200);
+ PD6=1;
+  delay(200);
+ PD7=0;
+ LATB=0X00;
+  }
+return ;  
+}
+*/
+    
+void main (void){
+    TRISB=0;
+    PORTB=0XFF;
+    while(1){
+        LATB=~LATB;
+        delay(500);
+    }
+    
+}
+
+
